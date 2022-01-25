@@ -1,6 +1,4 @@
 class BookmarksController < ApplicationController
-  # def new
-  # end
 
   def create
     @list = List.find(params[:list_id])
@@ -16,12 +14,6 @@ class BookmarksController < ApplicationController
     else
       render "lists/show"
     end
-
-    # redirect_to list_path(:id)
-    # else
-    #   render "lists/show"
-    # end
-    # redirect_to list_path(:list_id)
   end
 
   def destroy

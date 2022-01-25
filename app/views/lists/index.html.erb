@@ -1,10 +1,28 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
-<div> <%= link_to "create list", new_list_path, class: "btn-primary" %> </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img-19.ccm2.net/kyn2_bCQILiKVW1jFOx5hVaFGNo=/480x335/smart/6246fc94bad94dda9c611a1fdc87dd76/ccmcms-commentcamarche/23887428.jpg);">
+  <div class="container">
+    <h1>Ask <strong>EMMAAAAAAA</strong> one of the best <strong>MOVIE EXPERTS</strong>!</h1>
+    <p>Jippidoooo</p>
+    <%= link_to "Create list", new_list_path, class: "nav-link", class: "btn-primary" %>
+  </div>
+</div>
 
 <%# display all lists %>
-<% @lists.each do |list| %>
- <div>
-  <%= link_to list.name, list_path(list) %>
- </div>
-<% end %>
+<div class="cards">
+  <% @lists.each do |list| %>
+
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Title here</h2>
+        <p>Short description here!</p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  </div>
+
+    <%= link_to list.name, list_path(list) %>
+    <%= link_to "Delete", list_path(list), method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end  %>
+</div>

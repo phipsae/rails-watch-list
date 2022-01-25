@@ -1,8 +1,8 @@
 <h1><%= @list.name %></h1>
 <p>Movies in list</p>
-<%# <% if @list.photo =! nil %> %>
+<% if @list.photo.attached? %>
   <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-<%# <% end %>  %>
+<% end %>
 <% @movies.each do |movie| %>
   <div>
     <%= movie.title %>
